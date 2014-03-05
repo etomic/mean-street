@@ -1,0 +1,28 @@
+<h1>User Profile</h1>
+
+<div class="row" ng-controller="MyCtrl">
+
+    <div class="col-sm-6">
+        <input type="text" ng-model="myModelObj">
+        <br />
+        <br />
+
+        <input type="file" ng-file-select="onFileSelect($files)" >
+        <br />
+
+        <input type="file" ng-file-select="onFileSelect($files)" multiple>
+        <br />
+
+        <div ng-file-drop="onFileSelect($files)" ng-file-drag-over-class="optional-css-class" ng-show="dropSupported"
+            style="text-align: center; border: dashed 1px #777; margin: 1em 0; height: 250px; width: 250px;">drop files here</div>
+  
+        <div ng-file-drop-available="dropSupported=true" ng-show="!dropSupported">HTML5 Drop File is not supported!</div>
+  
+        <button ng-click="upload.abort()">Cancel Upload</button>
+    </div>
+
+    <div class="col-sm-6">
+        <img ng-src="{{imageSource}}" style="height: 150px; width: 150px;" />
+    </div>
+
+</div>
